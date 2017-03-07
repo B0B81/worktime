@@ -1,0 +1,15 @@
+= simple_form_for @workfile, html: { multipart: true} do |f|
+  -if @workfile.errors.any?
+    %errors
+      %p
+        = @workfile.errors.count
+        Preveted this workfile from saving
+      %ul
+        - @workfile.errors.full.messages.each do |msg|
+          %li= msg
+  .panel-body
+    = f.input :title, input_html: { class: 'form-control' }
+    = f.input :date, as: :date_picker
+    = f.input :description, input_html: { class: 'form-control' }
+
+  = f.button :submit

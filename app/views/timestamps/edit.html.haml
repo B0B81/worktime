@@ -1,0 +1,8 @@
+%h1 Edit Reply
+
+= simple_form_for([@workfile, @timestamp]) do |f|
+  = f.input :description, :label => false, :placeholder => 'description'
+  = f.input :ordernumber, :label => false, :placeholder => 'ordernumber'
+  = f.input :begin_date, :label => false
+  = f.input :begin_time, :label => false
+  = f.button :submit, class: 'btn btn-default'

@@ -1,0 +1,24 @@
+#worktime
+  %h3= @workfile.title
+  %p= localize @workfile.date
+  %p= @workfile.description
+
+#timestamps
+  %h3 Timestamps
+  %table.table
+    %thead
+      %tr
+        %th ordernumber
+        %th description
+        %th Date
+        %th Time
+    %tbody
+      = render @workfile.timestamps
+
+  %h3 Add a Timestamp
+  = render "timestamps/form"
+
+= link_to t('back'), root_path, class: "btn btn-default"
+-if user_signed_in?
+  = link_to t('edit'), edit_workfile_path, class: "btn btn-default"
+  = link_to t('delete'), workfile_path, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-default'

@@ -1,0 +1,8 @@
+%tr{:id => timestamp.id}
+  %td= timestamp.ordernumber
+  %td= timestamp.description
+  %td= timestamp.begin_date
+  %td= timestamp.begin_time
+  %td
+    = link_to 'Edit', edit_workfile_timestamp_path(timestamp.workfile, timestamp), class: "btn btn-primary"
+    = link_to 'Delete', [timestamp.workfile, timestamp], method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary"

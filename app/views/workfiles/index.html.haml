@@ -1,0 +1,25 @@
+= form_tag(workfiles_path, method: :get) do
+  .row
+    .col-xs-3
+      .input-group
+        = text_field_tag :term, params[:term], placeholder: "Search...", class: "form-control"
+        .input-group-btn
+          = button_tag 'Search', name: nil, class: "btn btn-default btn" do
+            %span.glyphicon.glyphicon-search
+
+%br/
+%table.table
+  %thead
+    %tr
+      %th title
+      %th date
+      %th description
+  %tbody
+    - @workfile.each do |workfile|
+      %tr
+        %td= link_to workfile.title, workfile
+        %td= workfile.date
+        %td= workfile.description
+        %td
+          = link_to t('edit'), edit_workfile_path(workfile), class: "btn btn-default btn-xs"
+          = link_to t('delete'), workfile_path(workfile), method: :delete, data: { confirm: t('are_you_sure') }, class: "btn btn-default btn-xs"

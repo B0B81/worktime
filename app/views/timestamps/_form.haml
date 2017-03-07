@@ -1,0 +1,7 @@
+= simple_form_for([@workfile, @workfile.timestamps.build]) do |f|
+  = f.input :ordernumber, :label => false, :placeholder => 'ordernumber'
+  = link_to 'Home', root_path, remote: true, class: "btn btn-default btn"
+  = f.input :description, :label => false, :placeholder => 'description'
+  = f.input :begin_date, as: :date_picker, :label => false, :placeholder => 'Date'
+  = f.input :begin_time, as: :time_picker, :label => false, :placeholder => 'Time'
+  = f.button :submit, class: 'btn btn-default'

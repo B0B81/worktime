@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyString
+  ordernumber: 1
+  begin_date: 2017-03-06
+  begin_time: 2017-03-06 21:39:30
+  end_date: 2017-03-06
+  end_time: 2017-03-06 21:39:30
+  user: one
+  workfile: one
+
+two:
+  description: MyString
+  ordernumber: 1
+  begin_date: 2017-03-06
+  begin_time: 2017-03-06 21:39:30
+  end_date: 2017-03-06
+  end_time: 2017-03-06 21:39:30
+  user: two
+  workfile: two
