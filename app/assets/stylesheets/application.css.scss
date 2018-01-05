@@ -60,6 +60,11 @@ body {
 	}
 }
 
+.form-group {
+  padding-left: 0px;
+  padding-right: 5px;
+}
+
 .workfile {
 	background: white;
 	border-radius: 5px;
@@ -116,24 +121,6 @@ body {
 	}
 }
 
-.form-inline {
-	margin-bottom: 0px;
-}
-
-.form-group{
-   margin-top: 3px;
-}
-
-.form-input {
-	width: 65% !important;
-	margin-bottom: 3px;
-	float: left;
-}
-.form-button {
-	float: left;
-	width: 30% !important;
-	margin-left: 5%;
-}
 .add-button {
 	margin-top: 25px;
 }

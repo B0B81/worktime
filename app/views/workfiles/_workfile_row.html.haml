@@ -1,0 +1,7 @@
+%tr
+  %td= link_to @workfile.title, workfile
+  %td= workfile.date
+  %td= workfile.description
+  %td
+    = link_to t('edit'), edit_workfile_path(workfile), remote: true, class: "btn btn-default btn-xs"
+    = link_to t('delete'), workfile_path(workfile), method: :delete, data: { confirm: t('are_you_sure') }, class: "btn btn-default btn-xs"

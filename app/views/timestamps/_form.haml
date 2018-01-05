@@ -1,7 +1,11 @@
-= simple_form_for([@workfile, @workfile.timestamps.build]) do |f|
-  = f.input :ordernumber, :label => false, :placeholder => 'ordernumber'
-  = link_to 'Home', root_path, remote: true, class: "btn btn-default btn"
-  = f.input :description, :label => false, :placeholder => 'description'
-  = f.input :begin_date, as: :date_picker, :label => false, :placeholder => 'Date'
-  = f.input :begin_time, as: :time_picker, :label => false, :placeholder => 'Time'
-  = f.button :submit, class: 'btn btn-default'
+= simple_form_for([@workfile, @workfile.timestamps.build], wrapper: :inline_form) do |f|
+  .form-group
+    = f.input :ordernumber, :label => false, wrapper: :vertical_input_group2 do
+      = f.input_field :ordernumber, as: :string, :label => false, :placeholder => 'ordernumber', class: "form-control order_search"
+      %span.input-group-btn
+        = link_to orders_path, remote: true, class: "btn btn-default" do
+          %span.glyphicon.glyphicon-plus
+    = f.input :description, :label => false, wrapper: :field4, :placeholder => 'description', class: "order_description"
+    = f.input :begin_date, as: :date_picker, :label => false, :placeholder => 'Date', wrapper: :field2
+    = f.input :begin_time, as: :time_picker, :label => false, :placeholder => 'Time', wrapper: :field2
+    = f.button :submit, class: 'btn btn-default'

@@ -7,4 +7,12 @@ Rails.application.routes.draw do
 
   root "workfiles#index"
 
+
+  resources :orders do
+    collection do
+      get 'get_order_description'
+    end
+  end
+
+
 end
